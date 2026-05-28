@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS `students` DEFAULT CHARACTER SET gbk;
-USE `students`;
-
 DROP TABLE IF EXISTS `student`;
 
 CREATE TABLE `student` (

@@ -1,7 +1,4 @@
-﻿CREATE DATABASE IF NOT EXISTS `students` DEFAULT CHARACTER SET gbk;
-USE `students`;
-
-DROP TABLE IF EXISTS `student`;
+﻿DROP TABLE IF EXISTS `student`;
 
 CREATE TABLE `student` (
   `id` int(11) NOT NULL auto_increment,
