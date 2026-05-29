@@ -11,10 +11,10 @@ public class Dbconn {
 	private Connection conn;
 	public  Connection getConnection() throws SQLException{
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/students?useUnicode=true&characterEncoding=GBK","root","1234");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/students?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false","root","root");
 		} catch (ClassNotFoundException e) {
-			System.out.println("�Ҳ������񣡣�");
+			System.out.println("MySQL driver was not found.");
 			e.printStackTrace();
 		}
 		return conn;

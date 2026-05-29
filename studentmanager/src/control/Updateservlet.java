@@ -26,31 +26,31 @@ public class Updateservlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		    request.setCharacterEncoding("gbk");
+		    request.setCharacterEncoding("UTF-8");
 		 		
-	 			// 得到传入参数：学生ID
+	 			// 锟矫碉拷锟斤拷锟斤拷锟斤拷锟斤拷锟窖э拷锟絀D
 			    String id = request.getParameter("id");
 			if (null==id)
 			{
-				request.setAttribute("error", "没有该学生！");
+				request.setAttribute("error", "Missing student id.");
 				request.getRequestDispatcher("/jsp/error.jsp").forward(request, response);
 				
 				return ;
 			}
 			Integer studentId = Integer.valueOf(id);
-			// 调用查询方法，得到学生数据
+			// 锟斤拷锟矫诧拷询锟斤拷锟斤拷锟斤拷锟矫碉拷学锟斤拷锟斤拷锟斤拷
      		StudentModel model = new StudentModel();
 
 			Student student = model.load(studentId);
 			if (null==student)
 			{
-				request.setAttribute("error", "没有指定编号的学生记录");
+				request.setAttribute("error", "Student record was not found.");
 				request.getRequestDispatcher("/jsp/error.jsp").forward(request, response);
 				return ;
 			}
-			// 将管理员数据保存到request中
+			// 锟斤拷锟斤拷锟斤拷员锟斤拷锟捷憋拷锟芥到request锟斤拷
 			request.setAttribute("student", student);
-			// 转发到student.jsp
+			// 转锟斤拷锟斤拷student.jsp
 			request.getRequestDispatcher("/jsp/studentupdate.jsp").forward(request, response);
 	
 	}

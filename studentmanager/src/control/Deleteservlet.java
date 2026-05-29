@@ -24,7 +24,7 @@ public class Deleteservlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-     		request.setCharacterEncoding("gbk");
+	    		request.setCharacterEncoding("UTF-8");
      		int id=Integer.parseInt(request.getParameter("id"));
      		StudentModel model = new StudentModel();
 	 	    model.delete(id);

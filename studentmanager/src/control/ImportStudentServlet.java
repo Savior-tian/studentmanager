@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +26,7 @@ public class ImportStudentServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("GBK");
+		request.setCharacterEncoding("UTF-8");
 		String pastedContent = request.getParameter("pastedContent");
 		String filePath = request.getParameter("filePath");
 
@@ -35,20 +37,20 @@ public class ImportStudentServlet extends HttpServlet {
 			} else if (filePath != null && filePath.trim().length() > 0) {
 				students = parseCsvFile(filePath.trim());
 			} else {
-				request.setAttribute("error", "请输入 Excel 复制内容，或填写 CSV 文件路径。 ");
+				request.setAttribute("error", "Please paste Excel content or enter a CSV file path.");
 				request.getRequestDispatcher("/jsp/studentimport.jsp").forward(request, response);
 				return;
 			}
 
 			if (students.isEmpty()) {
-				request.setAttribute("error", "没有解析到可导入的学生数据。 ");
+				request.setAttribute("error", "No student data was parsed for import.");
 				request.getRequestDispatcher("/jsp/studentimport.jsp").forward(request, response);
 				return;
 			}
 
 			StudentModel model = new StudentModel();
 			int importedCount = model.batchInsert(students);
-			request.setAttribute("message", "成功导入 " + importedCount + " 条学生记录。 ");
+			request.setAttribute("message", "Imported " + importedCount + " student records successfully.");
 			request.setAttribute("studentlist", model.search());
 			request.getRequestDispatcher("/jsp/studentlist.jsp").forward(request, response);
 		} catch (Exception e) {
@@ -71,10 +73,27 @@ public class ImportStudentServlet extends HttpServlet {
 	}
 
 	private List<Student> parseCsvFile(String filePath) throws Exception {
+		Exception utf8Failure = null;
+		try {
+			return parseCsvFile(filePath, StandardCharsets.UTF_8);
+		} catch (Exception e) {
+			utf8Failure = e;
+		}
+		try {
+			return parseCsvFile(filePath, Charset.forName("GBK"));
+		} catch (Exception e) {
+			if (utf8Failure != null) {
+				e.addSuppressed(utf8Failure);
+			}
+			throw e;
+		}
+	}
+
+	private List<Student> parseCsvFile(String filePath, Charset charset) throws Exception {
 		List<Student> students = new ArrayList<Student>();
 		BufferedReader reader = null;
 		try {
-			reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "GBK"));
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), charset));
 			String line = null;
 			int lineNumber = 0;
 			while ((line = reader.readLine()) != null) {
@@ -99,7 +118,7 @@ public class ImportStudentServlet extends HttpServlet {
 			columns = row.split(",");
 		}
 		if (columns.length < 6) {
-			throw new IllegalArgumentException("第 " + lineNumber + " 行格式错误，应为：学号,姓名,性别,年龄,班级,成绩");
+			throw new IllegalArgumentException("Line " + lineNumber + " format error. Expected: id,name,sex,age,grade,score");
 		}
 
 		Student student = new Student();

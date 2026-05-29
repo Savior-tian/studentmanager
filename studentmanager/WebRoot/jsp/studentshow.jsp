@@ -1,85 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=GBK"
-	pageEncoding="GBK"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<title>Ñ§ÉúÏêÏ¸ĞÅÏ¢</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>å­¦ç”Ÿè¯¦ç»†ä¿¡æ¯</title>
+		<link rel="stylesheet" type="text/css" href="../assets/site.css">
 	</head>
 	<body>
-		<center>
-			<h1> 
-				É¾³ıµÄÑ§ÉúĞÅÏ¢ 
-			</h1>
-		</center>
-		<table align="center" width="360" border="1" cellspacing="0"
-			cellpadding="5">
-
-			<tr>
-				<td align="center">
-					±àºÅ
-				</td>
-				<td>
-					${student.id}
-				</td>
-			</tr>
-
-			<tr>
-				<td align="center">
-					ĞÕÃû
-				</td>
-				<td>
-					${student.name}
-				</td>
-			</tr>
-			<tr>
-				<td align="center">
-					ĞÔ±ğ
-				</td>
-				<td>
-					${student.sex}
-				</td>
-			</tr>
-			<tr>
-				<td align="center">
-					°à¼¶
-				</td>
-				<td>
-					${student.grade}
-				</td>
-			</tr>
-
-			<tr>
-				<td align="center">
-					ÄêÁä
-				</td>
-				<td>
-					${student.age}
-				</td>
-			</tr>
-
-			<tr>
-				<td align="center">
-					³É¼¨
-				</td>
-				<td>
-					${student.score}
-				</td>
-			</tr>
-		</table>
-		<table align="center" width="360" border="0">
-			<tr>
-				<td align="center">
-					<form action="DeleteStudentservlet.do?id=${student.id}" method="post">
-						<input type="submit" value="É¾³ı">
-					</form>
-				</td>
-				<td align="center">
-					<form action="ListStudentServlet.do" method="post">
-						<input type="submit" value="·µ»Ø">
-					</form>
-				</td>
-			</tr>
-		</table>
+		<div class="page-shell">
+			<div class="page-card">
+				<div class="page-header">
+					<h1 class="page-title">åˆ é™¤å­¦ç”Ÿä¿¡æ¯</h1>
+					<p class="page-subtitle">è¯·ç¡®è®¤ä»¥ä¸‹ä¿¡æ¯æ— è¯¯ã€‚ç‚¹å‡»ç¡®è®¤åˆ é™¤åï¼Œè¿™æ¡å­¦ç”Ÿè®°å½•å°†è¢«ç§»é™¤ã€‚</p>
+				</div>
+				<div class="page-body">
+					<div class="details-grid">
+						<div class="detail-item"><p class="detail-label">å­¦å·</p><p class="detail-value">${student.id}</p></div>
+						<div class="detail-item"><p class="detail-label">å§“å</p><p class="detail-value">${student.name}</p></div>
+						<div class="detail-item"><p class="detail-label">æ€§åˆ«</p><p class="detail-value">${student.sex}</p></div>
+						<div class="detail-item"><p class="detail-label">ç­çº§</p><p class="detail-value">${student.grade}</p></div>
+						<div class="detail-item"><p class="detail-label">å¹´é¾„</p><p class="detail-value">${student.age}</p></div>
+						<div class="detail-item"><p class="detail-label">æˆç»©</p><p class="detail-value">${student.score}</p></div>
+					</div>
+					<div class="form-actions">
+						<form action="DeleteStudentservlet.do?id=${student.id}" method="post">
+							<input class="btn" type="submit" value="ç¡®è®¤åˆ é™¤">
+						</form>
+						<form action="ListStudentServlet.do" method="post">
+							<input class="btn btn-secondary" type="submit" value="è¿”å›åˆ—è¡¨">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</body>
 </html>

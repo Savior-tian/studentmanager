@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="GBK"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <%
 response.sendRedirect("ListStudentServlet.do");
 %>

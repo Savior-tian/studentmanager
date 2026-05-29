@@ -8,7 +8,7 @@ CREATE TABLE `student` (
   `grade` varchar(20) default NULL,
   `score` float default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `student` VALUES (1,'张国强','男',22,'12网编2班',80);
 INSERT INTO `student` VALUES (2,'张国红','女',21,'12网编1班',91.2);
 INSERT INTO `student` VALUES (3,'Tom','F',20,'3',70);

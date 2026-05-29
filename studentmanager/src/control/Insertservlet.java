@@ -17,7 +17,7 @@ public class Insertservlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		    request.setCharacterEncoding("gbk");
+		    request.setCharacterEncoding("UTF-8");
 	 		int id = Integer.parseInt(request.getParameter("id"));
 	 		String name = request.getParameter("name");
 			String sex = request.getParameter("sex");
