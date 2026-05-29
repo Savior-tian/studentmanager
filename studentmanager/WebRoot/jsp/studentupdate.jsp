@@ -7,7 +7,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>修改学生信息</title>
-		<link rel="stylesheet" type="text/css" href="../assets/site.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/site.css">
 	</head>
 
 	<body>
@@ -18,7 +18,7 @@
 					<p class="page-subtitle">当前正在编辑学号为 ${student.id} 的学生信息，确认无误后保存修改。</p>
 				</div>
 				<div class="page-body">
-					<form action="DoUpdateStudentservlet.do?id=${student.id}" method="post">
+					<form action="${pageContext.request.contextPath}/DoUpdateStudentservlet.do?id=${student.id}" method="post">
 						<div class="form-grid">
 							<div class="field field-wide">
 								<label>学号</label>
@@ -48,7 +48,7 @@
 						<div class="form-actions">
 							<input class="btn" type="submit" value="保存修改">
 							<input class="btn btn-secondary" type="reset" value="重置">
-							<a class="btn btn-secondary" href="../ListStudentServlet.do">返回列表</a>
+							<a class="btn btn-secondary" href="${pageContext.request.contextPath}/ListStudentServlet.do">返回列表</a>
 						</div>
 					</form>
 				</div>

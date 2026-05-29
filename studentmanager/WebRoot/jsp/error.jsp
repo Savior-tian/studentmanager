@@ -3,7 +3,7 @@
 <html>
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="../assets/site.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/site.css">
 
 	<title>错误提示</title>
     
@@ -20,7 +20,7 @@
 			<div class="page-body">
 				<div class="notice notice-error">${error}</div>
 				<div class="form-actions">
-					<a class="btn btn-secondary" href="../ListStudentServlet.do">返回学生列表</a>
+					<a class="btn btn-secondary" href="${pageContext.request.contextPath}/ListStudentServlet.do">返回学生列表</a>
 				</div>
 			</div>
 		</div>

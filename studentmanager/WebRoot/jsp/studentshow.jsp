@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>学生详细信息</title>
-		<link rel="stylesheet" type="text/css" href="../assets/site.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/site.css">
 	</head>
 	<body>
 		<div class="page-shell">
@@ -24,10 +24,10 @@
 						<div class="detail-item"><p class="detail-label">成绩</p><p class="detail-value">${student.score}</p></div>
 					</div>
 					<div class="form-actions">
-						<form action="DeleteStudentservlet.do?id=${student.id}" method="post">
+						<form action="${pageContext.request.contextPath}/DeleteStudentservlet.do?id=${student.id}" method="post">
 							<input class="btn" type="submit" value="确认删除">
 						</form>
-						<form action="ListStudentServlet.do" method="post">
+						<form action="${pageContext.request.contextPath}/ListStudentServlet.do" method="post">
 							<input class="btn btn-secondary" type="submit" value="返回列表">
 						</form>
 					</div>

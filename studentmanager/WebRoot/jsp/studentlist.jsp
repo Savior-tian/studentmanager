@@ -6,7 +6,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>学生信息列表</title>
-		<link rel="stylesheet" type="text/css" href="../assets/site.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/site.css">
 
 	</head>
 	<body>
@@ -20,8 +20,8 @@
 				<div class="toolbar">
 					<p class="muted-note">当前可执行新增、修改、删除和批量导入操作。</p>
 					<div class="toolbar-actions">
-						<a class="btn" href="jsp/studentinsert.jsp">新增学生</a>
-						<a class="btn btn-secondary" href="ImportStudentservlet.do">批量导入</a>
+						<a class="btn" href="${pageContext.request.contextPath}/jsp/studentinsert.jsp">新增学生</a>
+						<a class="btn btn-secondary" href="${pageContext.request.contextPath}/ImportStudentservlet.do">批量导入</a>
 					</div>
 				</div>
 		<c:if test="${not empty message}">
@@ -62,10 +62,10 @@
 						${studentitem.score}
 					</td>
 					<td >
-						<a class="action-link" href="UpdateStudentservlet.do?id=${studentitem.id}">修改</a>
+						<a class="action-link" href="${pageContext.request.contextPath}/UpdateStudentservlet.do?id=${studentitem.id}">修改</a>
 					</td>
 					<td >
-						<a class="action-link" href="showStudent.do?id=${studentitem.id}">删除</a>
+						<a class="action-link" href="${pageContext.request.contextPath}/showStudent.do?id=${studentitem.id}">删除</a>
 					</td>
 				</tr>
 			</c:forEach>

@@ -4,7 +4,7 @@
 <html>
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="../assets/site.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/site.css">
 
 	<title>新增学生信息</title>
     
@@ -19,7 +19,7 @@
 			<p class="page-subtitle">录入完整的学生基础信息，提交后会自动回到学生列表页面。</p>
 		</div>
 		<div class="page-body">
-			<form action="../InsertStudentservlet.do" method="post">
+			<form action="${pageContext.request.contextPath}/InsertStudentservlet.do" method="post">
 				<div class="form-grid">
 					<div class="field">
 						<label for="id">学号</label>
@@ -49,7 +49,7 @@
 				<div class="form-actions">
 					<input class="btn" type="submit" value="提交">
 					<input class="btn btn-secondary" type="reset" value="重置">
-					<a class="btn btn-secondary" href="../ListStudentServlet.do">返回列表</a>
+					<a class="btn btn-secondary" href="${pageContext.request.contextPath}/ListStudentServlet.do">返回列表</a>
 				</div>
 			</form>
 		</div>
