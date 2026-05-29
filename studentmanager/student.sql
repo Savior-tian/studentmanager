@@ -1,10 +1,10 @@
 DROP TABLE IF EXISTS `student`;
 
 CREATE TABLE `student` (
-  `id` int(11) NOT NULL auto_increment,
+  `id` int NOT NULL auto_increment,
   `name` varchar(20) default NULL,
   `sex` varchar(2) default NULL,
-  `age` int(11) default NULL,
+  `age` int default NULL,
   `grade` varchar(20) default NULL,
   `score` float default NULL,
   PRIMARY KEY  (`id`)
