@@ -140,9 +140,3 @@ http://localhost:8080/studentmanager/ListStudentServlet.do
 - 第一行表头可保留，系统会自动跳过。
 - 粘贴导入时可使用 Excel 直接复制后的制表符分隔内容。
 - 文件导入时支持 csv、xls、xlsx。
-
-## 补充说明
-
-- 本项目是课程实验项目，工程结构已整理为标准 Eclipse Dynamic Web Project 形式。
-- 页面已统一为 UTF-8 编码。
-- 项目中部分实验说明、类图、用例图等文档文件已按课程提交需求单独保留。
