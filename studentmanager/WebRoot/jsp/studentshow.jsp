@@ -24,7 +24,7 @@
 						<div class="detail-item"><p class="detail-label">成绩</p><p class="detail-value">${student.score}</p></div>
 					</div>
 					<div class="form-actions">
-						<form action="${pageContext.request.contextPath}/DeleteStudentservlet.do?id=${student.id}" method="post">
+						<form action="${pageContext.request.contextPath}/DeleteStudentServlet.do?id=${student.id}" method="post">
 							<input class="btn" type="submit" value="确认删除">
 						</form>
 						<form action="${pageContext.request.contextPath}/ListStudentServlet.do" method="post">

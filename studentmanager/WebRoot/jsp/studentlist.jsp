@@ -62,7 +62,7 @@
 						${studentitem.score}
 					</td>
 					<td >
-						<a class="action-link" href="${pageContext.request.contextPath}/UpdateStudentservlet.do?id=${studentitem.id}">修改</a>
+						<a class="action-link" href="${pageContext.request.contextPath}/UpStudentServlet.do?id=${studentitem.id}">修改</a>
 					</td>
 					<td >
 						<a class="action-link" href="${pageContext.request.contextPath}/showStudent.do?id=${studentitem.id}">删除</a>

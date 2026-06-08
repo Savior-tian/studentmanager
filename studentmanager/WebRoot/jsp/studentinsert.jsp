@@ -19,7 +19,7 @@
 			<p class="page-subtitle">录入完整的学生基础信息，提交后会自动回到学生列表页面。</p>
 		</div>
 		<div class="page-body">
-			<form action="${pageContext.request.contextPath}/InsertStudentservlet.do" method="post">
+			<form action="${pageContext.request.contextPath}/InsertStudentServlet.do" method="post">
 				<div class="form-grid">
 					<div class="field">
 						<label for="id">学号</label>

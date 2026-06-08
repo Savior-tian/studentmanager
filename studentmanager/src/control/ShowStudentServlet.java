@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.StudentModel;
+import model.SelectStudent;
 import entity.Student;
 
 public class ShowStudentServlet extends HttpServlet{
@@ -24,7 +24,7 @@ public class ShowStudentServlet extends HttpServlet{
 		}
 		Integer studentId = Integer.valueOf(id);
 		// ���ò�ѯ�������õ�ѧ������
- 		StudentModel model = new StudentModel();
+	 		SelectStudent model = new SelectStudent();
 
 		Student student = model.load(studentId);
 		if (null==student)

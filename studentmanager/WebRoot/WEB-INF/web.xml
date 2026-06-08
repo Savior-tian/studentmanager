@@ -11,19 +11,19 @@
   </servlet>
   <servlet>
     <servlet-name>insertStudentservlet</servlet-name>
-    <servlet-class>control.Insertservlet</servlet-class>
+    <servlet-class>control.InsertStudentServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>deleteStudentservlet</servlet-name>
-    <servlet-class>control.Deleteservlet</servlet-class>
+    <servlet-class>control.DeleteStudentServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>updateStudentservlet</servlet-name>
-    <servlet-class>control.Updateservlet</servlet-class>
+    <servlet-class>control.UpStudentServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>doupdateStudentservlet</servlet-name>
-    <servlet-class>control.DoUpdateservlet</servlet-class>
+    <servlet-class>control.DoStudentServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>importStudentservlet</servlet-name>
@@ -40,23 +40,24 @@
   </servlet-mapping>	
 <servlet-mapping>
     <servlet-name>insertStudentservlet</servlet-name>
-    <url-pattern>/InsertStudentservlet.do</url-pattern>
+  <url-pattern>/InsertStudentServlet.do</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>deleteStudentservlet</servlet-name>
-    <url-pattern>/DeleteStudentservlet.do</url-pattern>
+    <url-pattern>/DeleteStudentServlet.do</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>updateStudentservlet</servlet-name>
-    <url-pattern>/UpdateStudentservlet.do</url-pattern>
+    <url-pattern>/UpStudentServlet.do</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>doupdateStudentservlet</servlet-name>
-    <url-pattern>/DoUpdateStudentservlet.do</url-pattern> 
+    <url-pattern>/DoStudentServlet.do</url-pattern> 
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>importStudentservlet</servlet-name>
     <url-pattern>/ImportStudentservlet.do</url-pattern>
   </servlet-mapping>
+
 
 </web-app>

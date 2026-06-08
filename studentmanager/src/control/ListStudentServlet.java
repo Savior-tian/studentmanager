@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.StudentModel;
+import model.SearchStudent;
 
 
 public class ListStudentServlet  extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
- 		StudentModel model = new StudentModel();
+	 		SearchStudent model = new SearchStudent();
 
 		List list = model.search();
 		request.setAttribute("studentlist", list); 
