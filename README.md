@@ -112,11 +112,11 @@ http://localhost:8080/studentmanager/ListStudentServlet.do
 ## 主要页面与接口
 
 - /ListStudentServlet.do：学生列表页
-- /InsertStudentservlet.do：新增学生
-- /UpdateStudentservlet.do?id=...：进入修改页
-- /DoUpdateStudentservlet.do?id=...：提交修改
+- /InsertStudentServlet.do：新增学生
+- /UpStudentServlet.do?id=...：进入修改页
+- /DoStudentServlet.do?id=...：提交修改
 - /showStudent.do?id=...：删除确认页
-- /DeleteStudentservlet.do?id=...：执行删除
+- /DeleteStudentServlet.do?id=...：执行删除
 - /ImportStudentservlet.do：批量导入
 
 ## 导入格式说明
